@@ -1,5 +1,13 @@
 # Getting Started
 
+### How to run the project
+* Install the JAVA, Spring Tool Suites (STS), Maven and MySQL database
+* Create a database in the MySQL
+* Import the project in STS
+* Update the configuration in application.properties file
+* Run the Project as Maven Install and then run as Spring Boot App
+* App will start running on Localhost port 8080
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
@@ -17,11 +25,3 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 * [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-
-### How to run the project
-* [Install the JAVA, Spring Tool Suites (STS), Maven and MySQL database]
-* [Create a database in the MySQL]
-* [Import the project in STS]
-* [Update the configuration in application.properties file]
-* [Run the Project as Maven Install and then run as Spring Boot App]
-* [App will start running on Localhost port 8080]
