@@ -5,7 +5,7 @@ This code is an accompaniment for [Deep Crawling the Web: A Comprehensive Guide 
 
 # Getting Started
 
-### Software Needed
+### Softwares Needed
 
 1. [JAVA 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 2. [Spring Tool Suites IDE (STS)](https://spring.io/tools)
@@ -53,7 +53,7 @@ Build the project using Maven by running following command in project directory.
 mvn clean install
 ```
 
-### Start ngrok. (For local Testing)
+### Start ngrok (For local Testing)
 
 Run the ngrok on port 8080. Open a new terminal and run the command below:
 
@@ -67,15 +67,63 @@ Ngrok will provide you public forwarding url which you canuse to make your weboo
 
 You can run the project by choosing "Spring Boot App" from "Run As" menu with will appear by right clicking on the project inside Spring Tool Suite. Locally Apache Tomcat will run the app on port 8080
 
-### Pushing URLs to the Crawler
 
-To push the URLs to the crawler, you can use provided `@POST /scrape/push-urls` API with the JSON payload as follow
+### List of available APIs
+
+#### API to push Urls to Crawler
+
+- **URL**: `POST /scrape/push-urls`
+- **Headers**:
 
 ```json
 {
-    "urls": [
-        "http://www.example.com/",
-        .....
-    ]
+  "Content-Type": "application/json"
 }
 ```
+
+- **Body**:
+
+```json
+{
+  "urls": ["List of Urls"]
+}
+```
+
+#### API for Webhook
+
+- **URL**: `POST /webhook/crawlbase`
+- **Headers**:
+
+```json
+{
+  "Content-Type": "text/plain",
+  "Content-Encoding": "gzip",
+  "Original-Status": 200,
+  "PC-Status": 200,
+  "rid": "The RID you received in the push call",
+  "url": "The URL which was crawled",
+  "type": "parent or child"
+}
+```
+
+- **Body**: `The HTML of the page`
+  
+### Reference Documentation
+
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.2/maven-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.2/maven-plugin/reference/html/#build-image)
+* [Spring Web](https://docs.spring.io/spring-boot/docs/3.1.2/reference/htmlsingle/index.html#web)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.1.2/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
+
+### Guides
+
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
