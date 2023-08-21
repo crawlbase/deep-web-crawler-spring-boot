@@ -30,17 +30,18 @@ Example:
 
 ```bash
 # PROJECT_FOLDER/src/main/resources/application.properties
-spring.datasource.url=jdbc:mysql://localhost:3306/<database_name>
-spring.datasource.username=MySQL_username
-spring.datasource.password=MySQL_password
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
+spring.datasource.url=jdbc:mysql://localhost:3306/<database_name>
+spring.datasource.username=<MySQL_username>
+spring.datasource.password=<MySQL_password>
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
 
 crawlbase.token=<Your_Crawlbase_Normal_Token>
 crawlbase.crawler=<Your_TCP_Crawler_Name>
 
-logging.file.name=logs/crawlbase-demo.log
+logging.file.name=logs/<log-file-name>.log
 ```
 
 Note: At starting, just give dummy name to the crawler. After successfully running this Application create the crawler with the webhook provided by this Application. `@POST /webhook/crawlbase`
